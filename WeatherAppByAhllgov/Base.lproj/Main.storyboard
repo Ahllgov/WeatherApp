@@ -208,16 +208,14 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-0Q-Ttt">
-                                        <rect key="frame" x="334" y="783" width="50" height="49"/>
+                                        <rect key="frame" x="334" y="782.5" width="50" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="9Jl-DM-bTY"/>
                                             <constraint firstAttribute="height" constant="50" id="BvP-hq-cKc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="location" catalog="system">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
                                         <connections>
                                             <action selector="getWeatherLocationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PsE-vx-Vke"/>
                                         </connections>
@@ -300,7 +298,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

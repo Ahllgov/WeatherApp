@@ -49,6 +49,7 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
         getCityWeatherButton.isEnabled = false
         getLocation()
         
+        print("Hello")
         
     }
     

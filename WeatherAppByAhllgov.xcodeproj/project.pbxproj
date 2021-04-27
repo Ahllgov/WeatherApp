@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7056DD0D263860D90032AE21 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7056DD0C263860D90032AE21 /* .gitignore */; };
 		7084BA40262F828E007B8D58 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7084BA3F262F828E007B8D58 /* Weather.swift */; };
 		7090ED63262E04F1000C8B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090ED62262E04F1000C8B41 /* AppDelegate.swift */; };
 		7090ED65262E04F1000C8B41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090ED64262E04F1000C8B41 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7056DD0C263860D90032AE21 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7084BA3F262F828E007B8D58 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		7090ED5F262E04F1000C8B41 /* WeatherAppByAhllgov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAppByAhllgov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7090ED62262E04F1000C8B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		7090ED56262E04F1000C8B41 = {
 			isa = PBXGroup;
 			children = (
+				7056DD0C263860D90032AE21 /* .gitignore */,
 				7090ED61262E04F1000C8B41 /* WeatherAppByAhllgov */,
 				7090ED60262E04F1000C8B41 /* Products */,
 			);
@@ -130,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7056DD0D263860D90032AE21 /* .gitignore in Resources */,
 				7090ED6F262E04F2000C8B41 /* LaunchScreen.storyboard in Resources */,
 				7090ED6C262E04F2000C8B41 /* Assets.xcassets in Resources */,
 				7090ED6A262E04F1000C8B41 /* Main.storyboard in Resources */,
