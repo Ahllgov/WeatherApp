@@ -32,7 +32,7 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        assignbackground()
+//        assignbackground()
         
         weather = WeatherGetter(delegate: self)
         //Инициализируем  UI
@@ -49,7 +49,7 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
         getCityWeatherButton.isEnabled = false
         getLocation()
         
-        print("Hello")
+        
         
     }
     
@@ -61,45 +61,45 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
             let background = UIImage(named: "backgroundForWeather")
 
             var imageView : UIImageView!
-            imageView = UIImageView(frame: view.bounds)
-        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+            imageView = UIImageView(frame: self.view.bounds)
+            imageView.contentMode =  UIView.ContentMode.scaleAspectFill
             imageView.clipsToBounds = true
             imageView.image = background
-            imageView.center = view.center
-            view.addSubview(imageView)
+            imageView.center = self.view.center
+            self.view.addSubview(imageView)
             self.view.sendSubviewToBack(imageView)
-        }
+    }
     
     func getWeatherImage(){
         //URL containing the image
-           let URL_IMAGE = URL(string: "https://openweathermap.org/img/wn/10n@2x.png")
-           let session = URLSession(configuration: .default)
-           //creating a dataTask
-           let getImageFromUrl = session.dataTask(with: URL_IMAGE!) { (data, response, error) in
-               //if there is any error
-               if let e = error {
-                   //displaying the message
-                   print("Error Occurred: \(e)")
-               } else {
-                   //in case of now error, checking wheather the response is nil or not
-                   if (response as? HTTPURLResponse) != nil {
-                       //checking if the response contains an image
-                       if let imageData = data {
-                           //getting the image
-                           let image = UIImage(data: imageData)
-                           //displaying the image
-                           self.uiImageView.image = image
-                       } else {
-                           print("Image file is currupted")
-                       }
-                   } else {
-                       print("No response from server")
-                   }
-               }
-           }
-           //starting the download task
-           getImageFromUrl.resume()
-       }
+        let URL_IMAGE = URL(string: "https://openweathermap.org/img/wn/10n@2x.png")
+        let session = URLSession(configuration: .default)
+        //creating a dataTask
+        let getImageFromUrl = session.dataTask(with: URL_IMAGE!) { (data, response, error) in
+            //if there is any error
+            if let e = error {
+                //displaying the message
+                print("Error Occurred: \(e)")
+            } else {
+                //in case of now error, checking wheather the response is nil or not
+                if (response as? HTTPURLResponse) != nil {
+                    //checking if the response contains an image
+                    if let imageData = data {
+                        //getting the image
+                        let image = UIImage(data: imageData)
+                        //displaying the image
+                        self.uiImageView.image = image
+                    } else {
+                        print("Image file is currupted")
+                    }
+                } else {
+                    print("No response from server")
+                }
+            }
+        }
+        //starting the download task
+        getImageFromUrl.resume()
+    }
     
     
     // MARK: - Button events
@@ -134,9 +134,9 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
         // ALl UI code needs to execute in the main queue, which is why we're wrapping the code
         // that updates all the labels in a dispatch_async() call.
         let imageUrlString = "https://openweathermap.org/img/wn/\(weather.weatherIconID)@2x.png"
-            guard let imageUrl:URL = URL(string: imageUrlString) else {
-                return
-            }
+        guard let imageUrl:URL = URL(string: imageUrlString) else {
+            return
+        }
         DispatchQueue.main.async {
             self.cityLabel.text = weather.city
             self.weatherLabel.text = weather.weatherDescription
@@ -162,6 +162,7 @@ class ViewController: UIViewController, WeatherGetterDelegate, UITextFieldDelega
     
     func didNotGetWeather(error: NSError) {
         print("didNotGetWeather error: \(error)")
+        setWeatherButtonStates(state: true)
     }
     //MARK: - CLLocationManagerDelegate and related methods
     
@@ -317,15 +318,15 @@ extension String {
 extension UIImageView {
     
     func loadImge(withUrl url: URL) {
-       
-           DispatchQueue.global().async { [weak self] in
-               if let imageData = try? Data(contentsOf: url) {
-                   if let image = UIImage(data: imageData) {
-                       DispatchQueue.main.async {
-                           self?.image = image
-                       }
-                   }
-               }
-           }
-       }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }
